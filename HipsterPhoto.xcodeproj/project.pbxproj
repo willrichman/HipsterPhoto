@@ -11,18 +11,21 @@
 		1559E38019ED868F006F7304 /* HipsterPhoto.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1559E37E19ED868F006F7304 /* HipsterPhoto.xcdatamodeld */; };
 		1559E38219ED868F006F7304 /* SinglePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1559E38119ED868F006F7304 /* SinglePhotoViewController.swift */; };
 		1559E39619ED868F006F7304 /* HipsterPhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1559E39519ED868F006F7304 /* HipsterPhotoTests.swift */; };
-		1559E3A719ED874C006F7304 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1559E3A619ED874C006F7304 /* Images.xcassets */; };
 		1559E3A919ED8761006F7304 /* GalleryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1559E3A819ED8761006F7304 /* GalleryHeaderView.swift */; };
 		1559E3AB19ED876A006F7304 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1559E3AA19ED876A006F7304 /* GalleryViewController.swift */; };
 		1559E3AD19ED8772006F7304 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1559E3AC19ED8772006F7304 /* GalleryCell.swift */; };
 		1559E3AF19ED87D8006F7304 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1559E3AE19ED87D8006F7304 /* Main.storyboard */; };
 		1559E3B119ED87E8006F7304 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1559E3B019ED87E8006F7304 /* LaunchScreen.xib */; };
 		15B750F419ED8833007B297D /* HipsterPhoto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15B750F319ED8833007B297D /* HipsterPhoto.jpg */; };
-		15B750F719ED886E007B297D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15B750F619ED886E007B297D /* Info.plist */; };
 		15B750F919ED88A2007B297D /* putabirdonit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15B750F819ED88A2007B297D /* putabirdonit.jpg */; };
 		15B750FB19ED88B2007B297D /* holga.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B750FA19ED88B2007B297D /* holga.png */; };
 		15B750FD19ED88C8007B297D /* camera-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B750FC19ED88C8007B297D /* camera-alt.png */; };
 		15B750FE19ED8941007B297D /* Duke.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15B750F519ED884C007B297D /* Duke.otf */; };
+		15B7510019ED9181007B297D /* FilterThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B750FF19ED9181007B297D /* FilterThumbnail.swift */; };
+		15B7510219ED95A1007B297D /* FilterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B7510119ED95A1007B297D /* FilterViewCell.swift */; };
+		15B7510419EDA04A007B297D /* CoreDataSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B7510319EDA04A007B297D /* CoreDataSeeder.swift */; };
+		15B7510819EDA131007B297D /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B7510719EDA131007B297D /* Filter.swift */; };
+		15EA991F19EDCA390005EFBA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15EA991E19EDCA390005EFBA /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +46,6 @@
 		1559E38F19ED868F006F7304 /* HipsterPhotoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HipsterPhotoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1559E39419ED868F006F7304 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1559E39519ED868F006F7304 /* HipsterPhotoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HipsterPhotoTests.swift; sourceTree = "<group>"; };
-		1559E3A619ED874C006F7304 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1559E3A819ED8761006F7304 /* GalleryHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryHeaderView.swift; sourceTree = "<group>"; };
 		1559E3AA19ED876A006F7304 /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		1559E3AC19ED8772006F7304 /* GalleryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
@@ -55,6 +57,11 @@
 		15B750F819ED88A2007B297D /* putabirdonit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = putabirdonit.jpg; sourceTree = "<group>"; };
 		15B750FA19ED88B2007B297D /* holga.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = holga.png; sourceTree = "<group>"; };
 		15B750FC19ED88C8007B297D /* camera-alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-alt.png"; sourceTree = "<group>"; };
+		15B750FF19ED9181007B297D /* FilterThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterThumbnail.swift; sourceTree = "<group>"; };
+		15B7510119ED95A1007B297D /* FilterViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewCell.swift; sourceTree = "<group>"; };
+		15B7510319EDA04A007B297D /* CoreDataSeeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataSeeder.swift; sourceTree = "<group>"; };
+		15B7510719EDA131007B297D /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		15EA991E19EDCA390005EFBA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,14 +103,9 @@
 		1559E37919ED868F006F7304 /* HipsterPhoto */ = {
 			isa = PBXGroup;
 			children = (
-				1559E3A119ED86FF006F7304 /* Model Layer */,
-				1559E3A019ED86F7006F7304 /* View Layer */,
 				1559E39F19ED86EE006F7304 /* Controller Layer */,
-				1559E37C19ED868F006F7304 /* AppDelegate.swift */,
-				1559E38119ED868F006F7304 /* SinglePhotoViewController.swift */,
-				1559E3A619ED874C006F7304 /* Images.xcassets */,
-				1559E3AE19ED87D8006F7304 /* Main.storyboard */,
-				1559E3B019ED87E8006F7304 /* LaunchScreen.xib */,
+				1559E3A019ED86F7006F7304 /* View Layer */,
+				1559E3A119ED86FF006F7304 /* Model Layer */,
 				1559E37E19ED868F006F7304 /* HipsterPhoto.xcdatamodeld */,
 				1559E37A19ED868F006F7304 /* Supporting Files */,
 			);
@@ -143,6 +145,8 @@
 		1559E39F19ED86EE006F7304 /* Controller Layer */ = {
 			isa = PBXGroup;
 			children = (
+				1559E37C19ED868F006F7304 /* AppDelegate.swift */,
+				1559E38119ED868F006F7304 /* SinglePhotoViewController.swift */,
 				1559E3AA19ED876A006F7304 /* GalleryViewController.swift */,
 			);
 			name = "Controller Layer";
@@ -152,7 +156,11 @@
 			isa = PBXGroup;
 			children = (
 				1559E3AC19ED8772006F7304 /* GalleryCell.swift */,
+				15EA991E19EDCA390005EFBA /* Images.xcassets */,
+				15B7510119ED95A1007B297D /* FilterViewCell.swift */,
 				1559E3A819ED8761006F7304 /* GalleryHeaderView.swift */,
+				1559E3AE19ED87D8006F7304 /* Main.storyboard */,
+				1559E3B019ED87E8006F7304 /* LaunchScreen.xib */,
 			);
 			name = "View Layer";
 			sourceTree = "<group>";
@@ -160,6 +168,9 @@
 		1559E3A119ED86FF006F7304 /* Model Layer */ = {
 			isa = PBXGroup;
 			children = (
+				15B7510719EDA131007B297D /* Filter.swift */,
+				15B7510319EDA04A007B297D /* CoreDataSeeder.swift */,
+				15B750FF19ED9181007B297D /* FilterThumbnail.swift */,
 			);
 			name = "Model Layer";
 			sourceTree = "<group>";
@@ -245,14 +256,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				15B750FD19ED88C8007B297D /* camera-alt.png in Resources */,
+				15EA991F19EDCA390005EFBA /* Images.xcassets in Resources */,
 				15B750F419ED8833007B297D /* HipsterPhoto.jpg in Resources */,
 				15B750FE19ED8941007B297D /* Duke.otf in Resources */,
 				1559E3AF19ED87D8006F7304 /* Main.storyboard in Resources */,
 				1559E3B119ED87E8006F7304 /* LaunchScreen.xib in Resources */,
-				15B750F719ED886E007B297D /* Info.plist in Resources */,
 				15B750F919ED88A2007B297D /* putabirdonit.jpg in Resources */,
 				15B750FB19ED88B2007B297D /* holga.png in Resources */,
-				1559E3A719ED874C006F7304 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,12 +280,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15B7510219ED95A1007B297D /* FilterViewCell.swift in Sources */,
 				1559E3AD19ED8772006F7304 /* GalleryCell.swift in Sources */,
 				1559E38219ED868F006F7304 /* SinglePhotoViewController.swift in Sources */,
 				1559E38019ED868F006F7304 /* HipsterPhoto.xcdatamodeld in Sources */,
 				1559E3AB19ED876A006F7304 /* GalleryViewController.swift in Sources */,
 				1559E3A919ED8761006F7304 /* GalleryHeaderView.swift in Sources */,
 				1559E37D19ED868F006F7304 /* AppDelegate.swift in Sources */,
+				15B7510419EDA04A007B297D /* CoreDataSeeder.swift in Sources */,
+				15B7510819EDA131007B297D /* Filter.swift in Sources */,
+				15B7510019ED9181007B297D /* FilterThumbnail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
