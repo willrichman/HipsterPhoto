@@ -11,7 +11,7 @@ import CoreImage
 import OpenGLES
 import CoreData
 
-class SinglePhotoViewController: UIViewController, GalleryDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource {
+class SinglePhotoViewController: UIViewController, GalleryDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate{
     
     
     @IBOutlet weak var imageViewTrailingConstraint: NSLayoutConstraint!
@@ -40,9 +40,9 @@ class SinglePhotoViewController: UIViewController, GalleryDelegate, UIImagePicke
         var seeder = CoreDataSeeder(context: self.managedObjectContext!)
         
         self.generateThumbnail()
-        //if self.filters.isEmpty {
-          //  seeder.seedCoreData()
-        //}
+//        if self.filters.isEmpty {
+//            seeder.seedCoreData()
+//        }
         
         /* Set up our core image context */
         var options = [kCIContextWorkingColorSpace : NSNull()]
@@ -62,6 +62,8 @@ class SinglePhotoViewController: UIViewController, GalleryDelegate, UIImagePicke
 
     }
     
+    //MARK: - Collection View Handler
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.filters.count
     }
@@ -80,12 +82,14 @@ class SinglePhotoViewController: UIViewController, GalleryDelegate, UIImagePicke
                 }
             })
         }
-//        var filterThumbnail = FilterThumbnail(name: filters[indexPath.row].name, thumbnail: self.imageView.image!, queue: NSOperationQueue(), context: self.ciContext!)
-//        filterThumbnail.generateThumbnail { (image) -> Void in
-//            cell.filterViewImage.image = image
-//        }
         return cell
     }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
+    // MARK: - Navigation/Menus
     
     func enterFilterMode(recognizer: UITapGestureRecognizer) {
         self.imageViewTrailingConstraint.constant = self.imageViewTrailingConstraint.constant * 3

@@ -35,8 +35,8 @@ class FilterThumbnail {
             imageFilter.setValue(image, forKey: kCIInputImageKey)
             
             /* Generate the results.  The value for key happens lazily, then actually filters in createCGImage */
-            var result = imageFilter.valueForKey(kCIOutputImageKey) as CIImage
-            var extent = result.extent()
+            var result = imageFilter.valueForKey(kCIOutputImageKey) as? CIImage
+            var extent = result!.extent()
             var imageRef = self.gpuContext.createCGImage(result, fromRect: extent)
             self.filter = imageFilter
             self.filteredThumbnail = UIImage(CGImage: imageRef)

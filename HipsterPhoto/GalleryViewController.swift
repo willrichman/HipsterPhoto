@@ -85,7 +85,6 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
             }
         }
         
-        
     }
     
     
