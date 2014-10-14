@@ -9,11 +9,20 @@
 /* Begin PBXBuildFile section */
 		1559E37D19ED868F006F7304 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1559E37C19ED868F006F7304 /* AppDelegate.swift */; };
 		1559E38019ED868F006F7304 /* HipsterPhoto.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1559E37E19ED868F006F7304 /* HipsterPhoto.xcdatamodeld */; };
-		1559E38219ED868F006F7304 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1559E38119ED868F006F7304 /* ViewController.swift */; };
-		1559E38519ED868F006F7304 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1559E38319ED868F006F7304 /* Main.storyboard */; };
-		1559E38719ED868F006F7304 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1559E38619ED868F006F7304 /* Images.xcassets */; };
-		1559E38A19ED868F006F7304 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1559E38819ED868F006F7304 /* LaunchScreen.xib */; };
+		1559E38219ED868F006F7304 /* SinglePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1559E38119ED868F006F7304 /* SinglePhotoViewController.swift */; };
 		1559E39619ED868F006F7304 /* HipsterPhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1559E39519ED868F006F7304 /* HipsterPhotoTests.swift */; };
+		1559E3A719ED874C006F7304 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1559E3A619ED874C006F7304 /* Images.xcassets */; };
+		1559E3A919ED8761006F7304 /* GalleryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1559E3A819ED8761006F7304 /* GalleryHeaderView.swift */; };
+		1559E3AB19ED876A006F7304 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1559E3AA19ED876A006F7304 /* GalleryViewController.swift */; };
+		1559E3AD19ED8772006F7304 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1559E3AC19ED8772006F7304 /* GalleryCell.swift */; };
+		1559E3AF19ED87D8006F7304 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1559E3AE19ED87D8006F7304 /* Main.storyboard */; };
+		1559E3B119ED87E8006F7304 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1559E3B019ED87E8006F7304 /* LaunchScreen.xib */; };
+		15B750F419ED8833007B297D /* HipsterPhoto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15B750F319ED8833007B297D /* HipsterPhoto.jpg */; };
+		15B750F719ED886E007B297D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15B750F619ED886E007B297D /* Info.plist */; };
+		15B750F919ED88A2007B297D /* putabirdonit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15B750F819ED88A2007B297D /* putabirdonit.jpg */; };
+		15B750FB19ED88B2007B297D /* holga.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B750FA19ED88B2007B297D /* holga.png */; };
+		15B750FD19ED88C8007B297D /* camera-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B750FC19ED88C8007B297D /* camera-alt.png */; };
+		15B750FE19ED8941007B297D /* Duke.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15B750F519ED884C007B297D /* Duke.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,16 +37,24 @@
 
 /* Begin PBXFileReference section */
 		1559E37719ED868F006F7304 /* HipsterPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HipsterPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1559E37B19ED868F006F7304 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1559E37C19ED868F006F7304 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1559E37F19ED868F006F7304 /* HipsterPhoto.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HipsterPhoto.xcdatamodel; sourceTree = "<group>"; };
-		1559E38119ED868F006F7304 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1559E38419ED868F006F7304 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1559E38619ED868F006F7304 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		1559E38919ED868F006F7304 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		1559E38119ED868F006F7304 /* SinglePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePhotoViewController.swift; sourceTree = "<group>"; };
 		1559E38F19ED868F006F7304 /* HipsterPhotoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HipsterPhotoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1559E39419ED868F006F7304 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1559E39519ED868F006F7304 /* HipsterPhotoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HipsterPhotoTests.swift; sourceTree = "<group>"; };
+		1559E3A619ED874C006F7304 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1559E3A819ED8761006F7304 /* GalleryHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryHeaderView.swift; sourceTree = "<group>"; };
+		1559E3AA19ED876A006F7304 /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		1559E3AC19ED8772006F7304 /* GalleryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
+		1559E3AE19ED87D8006F7304 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		1559E3B019ED87E8006F7304 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		15B750F319ED8833007B297D /* HipsterPhoto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HipsterPhoto.jpg; sourceTree = "<group>"; };
+		15B750F519ED884C007B297D /* Duke.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Duke.otf; sourceTree = "<group>"; };
+		15B750F619ED886E007B297D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15B750F819ED88A2007B297D /* putabirdonit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = putabirdonit.jpg; sourceTree = "<group>"; };
+		15B750FA19ED88B2007B297D /* holga.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = holga.png; sourceTree = "<group>"; };
+		15B750FC19ED88C8007B297D /* camera-alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-alt.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,11 +96,14 @@
 		1559E37919ED868F006F7304 /* HipsterPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				1559E3A119ED86FF006F7304 /* Model Layer */,
+				1559E3A019ED86F7006F7304 /* View Layer */,
+				1559E39F19ED86EE006F7304 /* Controller Layer */,
 				1559E37C19ED868F006F7304 /* AppDelegate.swift */,
-				1559E38119ED868F006F7304 /* ViewController.swift */,
-				1559E38319ED868F006F7304 /* Main.storyboard */,
-				1559E38619ED868F006F7304 /* Images.xcassets */,
-				1559E38819ED868F006F7304 /* LaunchScreen.xib */,
+				1559E38119ED868F006F7304 /* SinglePhotoViewController.swift */,
+				1559E3A619ED874C006F7304 /* Images.xcassets */,
+				1559E3AE19ED87D8006F7304 /* Main.storyboard */,
+				1559E3B019ED87E8006F7304 /* LaunchScreen.xib */,
 				1559E37E19ED868F006F7304 /* HipsterPhoto.xcdatamodeld */,
 				1559E37A19ED868F006F7304 /* Supporting Files */,
 			);
@@ -93,7 +113,12 @@
 		1559E37A19ED868F006F7304 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1559E37B19ED868F006F7304 /* Info.plist */,
+				15B750FC19ED88C8007B297D /* camera-alt.png */,
+				15B750FA19ED88B2007B297D /* holga.png */,
+				15B750F819ED88A2007B297D /* putabirdonit.jpg */,
+				15B750F619ED886E007B297D /* Info.plist */,
+				15B750F519ED884C007B297D /* Duke.otf */,
+				15B750F319ED8833007B297D /* HipsterPhoto.jpg */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -113,6 +138,30 @@
 				1559E39419ED868F006F7304 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1559E39F19ED86EE006F7304 /* Controller Layer */ = {
+			isa = PBXGroup;
+			children = (
+				1559E3AA19ED876A006F7304 /* GalleryViewController.swift */,
+			);
+			name = "Controller Layer";
+			sourceTree = "<group>";
+		};
+		1559E3A019ED86F7006F7304 /* View Layer */ = {
+			isa = PBXGroup;
+			children = (
+				1559E3AC19ED8772006F7304 /* GalleryCell.swift */,
+				1559E3A819ED8761006F7304 /* GalleryHeaderView.swift */,
+			);
+			name = "View Layer";
+			sourceTree = "<group>";
+		};
+		1559E3A119ED86FF006F7304 /* Model Layer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Model Layer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,9 +244,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1559E38519ED868F006F7304 /* Main.storyboard in Resources */,
-				1559E38A19ED868F006F7304 /* LaunchScreen.xib in Resources */,
-				1559E38719ED868F006F7304 /* Images.xcassets in Resources */,
+				15B750FD19ED88C8007B297D /* camera-alt.png in Resources */,
+				15B750F419ED8833007B297D /* HipsterPhoto.jpg in Resources */,
+				15B750FE19ED8941007B297D /* Duke.otf in Resources */,
+				1559E3AF19ED87D8006F7304 /* Main.storyboard in Resources */,
+				1559E3B119ED87E8006F7304 /* LaunchScreen.xib in Resources */,
+				15B750F719ED886E007B297D /* Info.plist in Resources */,
+				15B750F919ED88A2007B297D /* putabirdonit.jpg in Resources */,
+				15B750FB19ED88B2007B297D /* holga.png in Resources */,
+				1559E3A719ED874C006F7304 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,8 +270,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1559E38219ED868F006F7304 /* ViewController.swift in Sources */,
+				1559E3AD19ED8772006F7304 /* GalleryCell.swift in Sources */,
+				1559E38219ED868F006F7304 /* SinglePhotoViewController.swift in Sources */,
 				1559E38019ED868F006F7304 /* HipsterPhoto.xcdatamodeld in Sources */,
+				1559E3AB19ED876A006F7304 /* GalleryViewController.swift in Sources */,
+				1559E3A919ED8761006F7304 /* GalleryHeaderView.swift in Sources */,
 				1559E37D19ED868F006F7304 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,25 +296,6 @@
 			targetProxy = 1559E39019ED868F006F7304 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		1559E38319ED868F006F7304 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1559E38419ED868F006F7304 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		1559E38819ED868F006F7304 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1559E38919ED868F006F7304 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1559E39719ED868F006F7304 /* Debug */ = {
@@ -411,6 +450,7 @@
 				1559E39B19ED868F006F7304 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1559E39C19ED868F006F7304 /* Build configuration list for PBXNativeTarget "HipsterPhotoTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +459,7 @@
 				1559E39E19ED868F006F7304 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

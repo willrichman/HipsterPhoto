@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Duke.otf">
+            <string>Duke-Regular</string>
+            <string>Duke-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Single Photo View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SinglePhotoViewController" customModule="HipsterPhoto" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="bottomRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HipsterPhoto.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Esi-gl-RKJ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="HaI-wV-pLw">
+                                        <variation key="widthClass=compact" constant="125"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="HaI-wV-pLw"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HipsterPhoto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92W-vN-8Mh">
+                                <rect key="frame" x="135" y="23" width="329.5" height="90"/>
+                                <fontDescription key="fontDescription" name="Duke-Regular" family="Duke" pointSize="90"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="putabirdonit.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="dAd-ho-wu5">
+                                <rect key="frame" x="51" y="11" width="498" height="498"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dAd-ho-wu5" secondAttribute="height" multiplier="1:1" id="BMT-tg-9cg"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2u-HU-P6T">
+                                <rect key="frame" x="252.5" y="534" width="95" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="EUj-xT-VoA"/>
+                                    <constraint firstAttribute="width" constant="95" id="mLl-0Z-PWy"/>
+                                    <constraint firstAttribute="width" secondItem="T2u-HU-P6T" secondAttribute="height" multiplier="107:64" id="qHM-k4-dww"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="camera-alt.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="photosPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dh1-b9-3FC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dAd-ho-wu5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="35" id="OI1-me-w2e"/>
+                            <constraint firstItem="T2u-HU-P6T" firstAttribute="top" secondItem="dAd-ho-wu5" secondAttribute="bottom" constant="25" id="Wak-LW-aE2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dAd-ho-wu5" secondAttribute="trailing" constant="35" id="XFs-GO-T4a"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Esi-gl-RKJ" secondAttribute="trailing" constant="-16" id="XQP-sj-rpS"/>
+                            <constraint firstAttribute="centerX" secondItem="T2u-HU-P6T" secondAttribute="centerX" id="YlD-EG-dGo"/>
+                            <constraint firstAttribute="centerY" secondItem="dAd-ho-wu5" secondAttribute="centerY" constant="40" id="emX-eU-P0B">
+                                <variation key="widthClass=compact" constant="-20"/>
+                            </constraint>
+                            <constraint firstItem="Esi-gl-RKJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="h8l-QJ-NcW"/>
+                            <constraint firstItem="92W-vN-8Mh" firstAttribute="centerX" secondItem="Esi-gl-RKJ" secondAttribute="centerX" id="j6w-io-oQN"/>
+                            <constraint firstItem="Esi-gl-RKJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="mAT-zL-ArP"/>
+                            <constraint firstAttribute="centerX" secondItem="dAd-ho-wu5" secondAttribute="centerX" id="qCk-8c-OaH"/>
+                            <constraint firstItem="92W-vN-8Mh" firstAttribute="centerY" secondItem="Esi-gl-RKJ" secondAttribute="centerY" constant="4.5" id="xO1-V9-WJF">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="XQP-sj-rpS"/>
+                                <include reference="h8l-QJ-NcW"/>
+                                <include reference="mAT-zL-ArP"/>
+                                <include reference="j6w-io-oQN"/>
+                                <include reference="xO1-V9-WJF"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="dAd-ho-wu5" id="8XB-7M-ilt"/>
+                        <segue destination="gua-zJ-DLb" kind="presentation" identifier="SHOW_GALLERY" id="f4r-c5-BK5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="136"/>
+        </scene>
+        <!--Gallery View Controller-->
+        <scene sceneID="ByT-Xm-CZi">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="gua-zJ-DLb" customClass="GalleryViewController" customModule="HipsterPhoto" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x4h-6Q-W4h"/>
+                        <viewControllerLayoutGuide type="bottom" id="uLx-7z-iq5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nqy-LN-CHt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AV7-fr-Fxp">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wo7-HR-vl5">
+                                    <size key="itemSize" width="100" height="125"/>
+                                    <size key="headerReferenceSize" width="50" height="70"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GALLERY_CELL" id="crQ-Fs-5t6" customClass="GalleryCell" customModule="HipsterPhoto" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="125"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo Label" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fS5-VZ-d69">
+                                                    <rect key="frame" x="5" y="95" width="90" height="27"/>
+                                                    <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="6"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3es-qO-QIN">
+                                                    <rect key="frame" x="5" y="3" width="90" height="90"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="90" id="OK5-6f-2Ex"/>
+                                                        <constraint firstAttribute="width" constant="90" id="rdY-NM-iNg"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="fS5-VZ-d69" firstAttribute="top" secondItem="3es-qO-QIN" secondAttribute="bottom" constant="2" id="337-oK-V65"/>
+                                            <constraint firstItem="3es-qO-QIN" firstAttribute="top" secondItem="crQ-Fs-5t6" secondAttribute="topMargin" constant="-5" id="QNx-Jp-09C"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="3es-qO-QIN" secondAttribute="trailing" constant="-3" id="TzH-w6-Gcj"/>
+                                            <constraint firstItem="fS5-VZ-d69" firstAttribute="leading" secondItem="crQ-Fs-5t6" secondAttribute="leadingMargin" constant="-3" id="j8G-FP-Ld5"/>
+                                            <constraint firstAttribute="centerX" secondItem="3es-qO-QIN" secondAttribute="centerX" id="ra1-oH-eCm"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="fS5-VZ-d69" secondAttribute="trailing" constant="-3" id="svY-gp-RJe"/>
+                                            <constraint firstItem="fS5-VZ-d69" firstAttribute="bottom" secondItem="crQ-Fs-5t6" secondAttribute="bottomMargin" constant="5" id="v0d-I7-6Za"/>
+                                            <constraint firstAttribute="centerX" secondItem="fS5-VZ-d69" secondAttribute="centerX" id="vZm-Be-56J"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="TzH-w6-Gcj"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <outlet property="galleryCellImage" destination="3es-qO-QIN" id="Vde-J1-8US"/>
+                                            <outlet property="galleryCellLabel" destination="fS5-VZ-d69" id="Y6R-kB-wpp"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GALLERY_HEADER" id="1UU-Of-dzD" customClass="GalleryHeaderView" customModule="HipsterPhoto" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="bottomRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HipsterPhoto.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="9dd-vN-m87">
+                                            <rect key="frame" x="-13" y="0.0" width="613" height="70"/>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z0x-WP-BXb">
+                                            <rect key="frame" x="147" y="7" width="306" height="55"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcm-ZI-doI">
+                                                    <rect key="frame" x="8" y="8" width="290" height="39"/>
+                                                    <fontDescription key="fontDescription" name="Duke-Regular" family="Duke" pointSize="40"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.66666666669999997" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Bcm-ZI-doI" secondAttribute="bottom" constant="8" id="AG4-Db-kgT"/>
+                                                <constraint firstAttribute="width" secondItem="z0x-WP-BXb" secondAttribute="height" multiplier="50:9" id="Z3O-eo-UuD"/>
+                                                <constraint firstItem="Bcm-ZI-doI" firstAttribute="leading" secondItem="z0x-WP-BXb" secondAttribute="leading" constant="8" id="dQ9-IY-KKR"/>
+                                                <constraint firstAttribute="height" constant="55" id="eTc-Tx-Bo2"/>
+                                                <constraint firstItem="Bcm-ZI-doI" firstAttribute="top" secondItem="z0x-WP-BXb" secondAttribute="top" constant="8" id="m9q-yc-2xR"/>
+                                                <constraint firstAttribute="trailing" secondItem="Bcm-ZI-doI" secondAttribute="trailing" constant="8" id="wjA-sd-FwL"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="9dd-vN-m87" secondAttribute="bottom" constant="-8" id="4ld-lv-Eck"/>
+                                        <constraint firstAttribute="centerX" secondItem="z0x-WP-BXb" secondAttribute="centerX" id="F9B-Ue-UYc"/>
+                                        <constraint firstItem="9dd-vN-m87" firstAttribute="leading" secondItem="1UU-Of-dzD" secondAttribute="leadingMargin" constant="-21" id="g9W-y9-q9g"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="9dd-vN-m87" secondAttribute="trailing" constant="-8" id="kxB-bm-gM8"/>
+                                        <constraint firstItem="9dd-vN-m87" firstAttribute="top" secondItem="1UU-Of-dzD" secondAttribute="topMargin" constant="-8" id="tx5-M1-mpS"/>
+                                        <constraint firstAttribute="centerY" secondItem="z0x-WP-BXb" secondAttribute="centerY" id="vHg-Ng-R89"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="galleryHeaderLabel" destination="Bcm-ZI-doI" id="c9h-Nq-VEM"/>
+                                    </connections>
+                                </collectionReusableView>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uLx-7z-iq5" firstAttribute="top" secondItem="AV7-fr-Fxp" secondAttribute="bottom" id="0dE-rK-jZ5"/>
+                            <constraint firstItem="AV7-fr-Fxp" firstAttribute="top" secondItem="Nqy-LN-CHt" secondAttribute="topMargin" id="4bB-e0-BSx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AV7-fr-Fxp" secondAttribute="trailing" constant="-16" id="8z3-h7-Mzf"/>
+                            <constraint firstItem="AV7-fr-Fxp" firstAttribute="leading" secondItem="Nqy-LN-CHt" secondAttribute="leadingMargin" constant="-16" id="WTV-Ed-J7G"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="AV7-fr-Fxp" id="QTK-Xb-VNM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UQM-ne-D0q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="803" y="136"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="HipsterPhoto.jpg" width="1441" height="956"/>
+        <image name="camera-alt.png" width="373" height="256"/>
+        <image name="putabirdonit.jpg" width="568" height="715"/>
+    </resources>
+</document>
