@@ -39,7 +39,7 @@ class SinglePhotoViewController: UIViewController, GalleryDelegate, UIImagePicke
         self.managedObjectContext = appDelegate.managedObjectContext!
         var seeder = CoreDataSeeder(context: self.managedObjectContext!)
         
-        self.generateThumbnail()
+
 //        if self.filters.isEmpty {
 //            seeder.seedCoreData()
 //        }
@@ -50,15 +50,15 @@ class SinglePhotoViewController: UIViewController, GalleryDelegate, UIImagePicke
         self.ciContext = CIContext(EAGLContext: myEAGLContext, options: options)
 
         self.fetchFilters()
-        
-        self.resetFilterThumbnails()
-        
-        
         self.filterCollectionView.dataSource = self
+        self.filterCollectionView.delegate = self
+        
+        self.generateThumbnail()
         
         self.enterPress = UITapGestureRecognizer(target: self, action: Selector("enterFilterMode:"))
         self.exitPress = UITapGestureRecognizer(target: self, action: Selector("exitFilterMode:"))
         self.imageView.addGestureRecognizer(enterPress!)
+        self.resetFilterThumbnails()
 
     }
     
@@ -86,7 +86,22 @@ class SinglePhotoViewController: UIViewController, GalleryDelegate, UIImagePicke
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
+        let filterSelected = self.filterThumbnails[indexPath.row]
+        println("Fired filter")
+        filterSelected.applyFilter(self.imageView.image!, completionHandler: { (filteredImage) -> Void in
+            self.imageView!.image = filteredImage
+            self.imageViewTrailingConstraint.constant = self.imageViewTrailingConstraint.constant / 3
+            self.imageViewLeadingConstraint.constant = self.imageViewLeadingConstraint.constant / 3
+            self.imageViewBottomConstraint.constant = self.imageViewBottomConstraint.constant / 3
+            self.filterCollectionViewBottomConstraint.constant = -100
+            
+            UIView.animateWithDuration(0.4, animations: { () -> Void in
+                self.view.layoutIfNeeded()
+            })
+            
+            self.imageView.removeGestureRecognizer(self.exitPress!)
+            self.imageView.addGestureRecognizer(self.enterPress!)
+        })
     }
     
     // MARK: - Navigation/Menus
@@ -101,12 +116,12 @@ class SinglePhotoViewController: UIViewController, GalleryDelegate, UIImagePicke
             self.view.layoutIfNeeded()
         })
         
-        self.imageView.removeGestureRecognizer(enterPress!)
-        self.imageView.addGestureRecognizer(exitPress!)
+        self.imageView.removeGestureRecognizer(self.enterPress!)
+        self.imageView.addGestureRecognizer(self.exitPress!)
     }
 
     
-    func exitFilterMode(recognizer: UITapGestureRecognizer) {
+    func exitFilterMode(recognizer: UITapGestureRecognizer?) {
         self.imageViewTrailingConstraint.constant = self.imageViewTrailingConstraint.constant / 3
         self.imageViewLeadingConstraint.constant = self.imageViewLeadingConstraint.constant / 3
         self.imageViewBottomConstraint.constant = self.imageViewBottomConstraint.constant / 3
@@ -116,8 +131,8 @@ class SinglePhotoViewController: UIViewController, GalleryDelegate, UIImagePicke
             self.view.layoutIfNeeded()
         })
         
-        self.imageView.removeGestureRecognizer(exitPress!)
-        self.imageView.addGestureRecognizer(enterPress!)
+        self.imageView.removeGestureRecognizer(self.exitPress!)
+        self.imageView.addGestureRecognizer(self.enterPress!)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -171,10 +186,14 @@ class SinglePhotoViewController: UIViewController, GalleryDelegate, UIImagePicke
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         self.imageView.image = info[UIImagePickerControllerEditedImage] as? UIImage
         self.dismissViewControllerAnimated(true, completion: nil)
+        self.generateThumbnail()
+        self.resetFilterThumbnails()
     }
     
     func didTapOnPicture(image : UIImage) {
         self.imageView.image = image
+        self.generateThumbnail()
+        self.resetFilterThumbnails()
     }
     
     func generateThumbnail () {
@@ -204,7 +223,8 @@ class SinglePhotoViewController: UIViewController, GalleryDelegate, UIImagePicke
             var thumbnail = FilterThumbnail(name: filterName, thumbnail: self.originalThumbnail!, queue: self.imageQueue, context: self.ciContext!)
             newFilters.append(thumbnail)
         }
+        println("New Thumbnails!")
         self.filterThumbnails = newFilters
-
+        self.filterCollectionView.reloadData()
     }
 }

@@ -37,6 +37,9 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GALLERY_CELL", forIndexPath: indexPath) as GalleryCell
+        cell.userInteractionEnabled = false
+        cell.galleryCellImage.image = nil
+        cell.activityIndicator.startAnimating()
         if self.images.isEmpty || indexPath.row > (self.images.count - 1){
             fetchImageForCell({ (errorDescription, returnedImage) -> Void in
                 if errorDescription != nil {
@@ -44,14 +47,21 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
                 }
                 else {
                     self.images.append(returnedImage!)
-                    cell.galleryCellImage.image = returnedImage!
+                    if let setCell = collectionView.cellForItemAtIndexPath(indexPath) as? GalleryCell {
+                        setCell.galleryCellImage.image = returnedImage!
+                        setCell.userInteractionEnabled = true
+                        setCell.activityIndicator.stopAnimating()
+                    }
                 }
             })
         }
         
         else {
             cell.galleryCellImage.image = self.images[indexPath.row]
+            cell.userInteractionEnabled = true
+            cell.activityIndicator.stopAnimating()
         }
+        
         cell.galleryCellLabel.text = self.titles[Int(arc4random()) % self.titles.count]
         if self.header != nil {
             self.header!.galleryHeaderLabel.text = "100 Images"
@@ -77,7 +87,7 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
     func fetchImageForCell (completionHandler: (errorDescription : String?, returnedImage : UIImage?) -> Void) {
         
         self.imageDownloadQueue.addOperationWithBlock { () -> Void in
-            let imageURL = NSURL(string: "http://lorempixel.com/100/100/")
+            let imageURL = NSURL(string: "http://lorempixel.com/300/300/")
             let imageData = NSData(contentsOfURL: imageURL)
             let imageToReturn = UIImage(data: imageData)
             NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in

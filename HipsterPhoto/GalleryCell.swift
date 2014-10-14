@@ -10,8 +10,8 @@ import UIKit
 
 class GalleryCell: UICollectionViewCell {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var galleryCellLabel: UILabel!
     @IBOutlet weak var galleryCellImage: UIImageView!
-    
-    
+
 }

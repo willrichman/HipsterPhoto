@@ -175,6 +175,10 @@
                                                         <constraint firstAttribute="width" constant="90" id="rdY-NM-iNg"/>
                                                     </constraints>
                                                 </imageView>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="trq-VZ-7mb">
+                                                    <rect key="frame" x="32" y="44" width="37" height="37"/>
+                                                    <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -183,7 +187,9 @@
                                             <constraint firstItem="fS5-VZ-d69" firstAttribute="top" secondItem="3es-qO-QIN" secondAttribute="bottom" constant="2" id="337-oK-V65"/>
                                             <constraint firstItem="3es-qO-QIN" firstAttribute="top" secondItem="crQ-Fs-5t6" secondAttribute="topMargin" constant="-5" id="QNx-Jp-09C"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="3es-qO-QIN" secondAttribute="trailing" constant="-3" id="TzH-w6-Gcj"/>
+                                            <constraint firstAttribute="centerY" secondItem="trq-VZ-7mb" secondAttribute="centerY" id="b7a-tz-TWO"/>
                                             <constraint firstItem="fS5-VZ-d69" firstAttribute="leading" secondItem="crQ-Fs-5t6" secondAttribute="leadingMargin" constant="-3" id="j8G-FP-Ld5"/>
+                                            <constraint firstAttribute="centerX" secondItem="trq-VZ-7mb" secondAttribute="centerX" constant="-0.5" id="jKB-O9-tLn"/>
                                             <constraint firstAttribute="centerX" secondItem="3es-qO-QIN" secondAttribute="centerX" id="ra1-oH-eCm"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="fS5-VZ-d69" secondAttribute="trailing" constant="-3" id="svY-gp-RJe"/>
                                             <constraint firstItem="fS5-VZ-d69" firstAttribute="bottom" secondItem="crQ-Fs-5t6" secondAttribute="bottomMargin" constant="5" id="v0d-I7-6Za"/>
@@ -195,6 +201,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
+                                            <outlet property="activityIndicator" destination="trq-VZ-7mb" id="7ro-pp-VIJ"/>
                                             <outlet property="galleryCellImage" destination="3es-qO-QIN" id="Vde-J1-8US"/>
                                             <outlet property="galleryCellLabel" destination="fS5-VZ-d69" id="Y6R-kB-wpp"/>
                                         </connections>
