@@ -19,7 +19,7 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
     var delegate : GalleryDelegate?
     let imageDownloadQueue = NSOperationQueue()
     
-    var images = [UIImage]()
+    var images = Dictionary<Int, UIImage>()
     var header : GalleryHeaderView?
     
     var titles = ["Contagious Potpourri", "Tricky Drone With Caustic Despondency", "Hollow Depression", "Progressive Tenderness", "Moderately Tweaking", "Dreary Androids", "Smugly Operating", "Pervicacious Operations", "Indomitable Power In Our Midst", "Freeze-Dried Cupcakes"]
@@ -28,41 +28,43 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
         super.viewDidLoad()
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
+        self.imageDownloadQueue.maxConcurrentOperationCount = 1
         // Do any additional setup after loading the view.
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return 25
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GALLERY_CELL", forIndexPath: indexPath) as GalleryCell
         cell.userInteractionEnabled = false
         cell.galleryCellImage.image = nil
+        var currentTag = cell.tag + 1
+        cell.tag = currentTag
         cell.activityIndicator.startAnimating()
-        if self.images.isEmpty || indexPath.row > (self.images.count - 1){
+        if self.images.indexForKey(indexPath.row) == nil {
             fetchImageForCell({ (errorDescription, returnedImage) -> Void in
-                if errorDescription != nil {
-                    println(errorDescription)
+                if cell.tag == currentTag {
+                    self.images[indexPath.row] = returnedImage!
+                    cell.galleryCellImage.image = returnedImage!
+                    cell.userInteractionEnabled = true
+                    cell.activityIndicator.stopAnimating()
+                    cell.galleryCellLabel.text = self.titles[Int(arc4random()) % self.titles.count]
+
                 }
-                else {
-                    self.images.append(returnedImage!)
-                    if let setCell = collectionView.cellForItemAtIndexPath(indexPath) as? GalleryCell {
-                        setCell.galleryCellImage.image = returnedImage!
-                        setCell.userInteractionEnabled = true
-                        setCell.activityIndicator.stopAnimating()
-                    }
-                }
+                                collectionView.reloadItemsAtIndexPaths([indexPath])
             })
         }
-        
+
         else {
             cell.galleryCellImage.image = self.images[indexPath.row]
             cell.userInteractionEnabled = true
             cell.activityIndicator.stopAnimating()
+            cell.galleryCellLabel.text = self.titles[Int(arc4random()) % self.titles.count]
         }
+    
         
-        cell.galleryCellLabel.text = self.titles[Int(arc4random()) % self.titles.count]
         if self.header != nil {
             self.header!.galleryHeaderLabel.text = "100 Images"
         }
@@ -76,10 +78,10 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
         return header
     }
     
-    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         println("indexpath: \(indexPath.row)")
-        self.delegate?.didTapOnPicture(self.images[indexPath.row])
+        let cell = self.collectionView.cellForItemAtIndexPath(indexPath) as GalleryCell
+        self.delegate?.didTapOnPicture(cell.galleryCellImage.image!)
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
         })
     }
@@ -96,8 +98,6 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
         }
         
     }
-    
-    
-    
+
 }
 

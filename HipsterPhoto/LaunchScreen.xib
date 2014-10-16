@@ -7,6 +7,7 @@
     <customFonts key="customFonts">
         <mutableArray key="Duke.otf">
             <string>Duke-Regular</string>
+            <string>Duke-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -20,8 +21,8 @@
                     <rect key="frame" x="-8" y="0.0" width="488" height="480"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2014 Will Richman. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
-                    <rect key="frame" x="20" y="439" width="441" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="20" y="442.5" width="441" height="17"/>
+                    <fontDescription key="fontDescription" name="Duke-Regular" family="Duke" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
