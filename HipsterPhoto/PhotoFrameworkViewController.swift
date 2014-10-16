@@ -9,10 +9,6 @@
 import UIKit
 import Photos
 
-protocol PhotoFrameworkDelegate {
-    func didTapOnPicture(image: UIImage)
-}
-
 class PhotoFrameworkViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -20,11 +16,12 @@ class PhotoFrameworkViewController: UIViewController, UICollectionViewDataSource
     var assetCollection : PHAssetCollection!
     var imageManager: PHCachingImageManager!
     var assetCellSize: CGSize!
-    var delegate : PhotoFrameworkDelegate?
+    var delegate : ImageSelectDelegate?
     var assetLargeImageSize : CGSize!
     let scale = UIScreen.mainScreen().scale
     var header : PhotosHeaderView?
     var flowLayout: UICollectionViewFlowLayout!
+    var frameworkQueue = NSOperationQueue()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,11 +55,12 @@ class PhotoFrameworkViewController: UIViewController, UICollectionViewDataSource
         var currentTag = cell.tag + 1
         cell.tag = currentTag
         var asset = self.assetFetchResults[indexPath.row] as PHAsset
-        self.imageManager.requestImageForAsset(asset, targetSize: self.assetCellSize, contentMode: PHImageContentMode.AspectFill, options: nil) { (image, info) -> Void in
-            if cell.tag == currentTag {
-                cell.imageView.image = image
+            self.imageManager.requestImageForAsset(asset, targetSize: self.assetCellSize, contentMode: PHImageContentMode.AspectFill, options: nil) { (image, info) -> Void in
+                if cell.tag == currentTag {
+                    cell.imageView.image = image
+                }
             }
-        }
+        
         
         return cell
     }
@@ -96,14 +94,16 @@ class PhotoFrameworkViewController: UIViewController, UICollectionViewDataSource
                     //pinching out, make cells larger
                     var currentSize = self.flowLayout.itemSize
                     self.flowLayout.itemSize = CGSize(width: currentSize.width * 2, height: currentSize.height * 2)
+                    self.assetCellSize = self.flowLayout.itemSize
                 }
                 else if recognizer.velocity < 0 && currentSize.width > 37.5 {
                     // shrink the cell size
+                    var currentSize = self.flowLayout.itemSize
                     self.flowLayout.itemSize = CGSize(width: currentSize.width * 0.5, height: currentSize.height * 0.5)
+                    self.assetCellSize = self.flowLayout.itemSize
                 }
             }, completion: nil)
         }
     }
-    
     
 }

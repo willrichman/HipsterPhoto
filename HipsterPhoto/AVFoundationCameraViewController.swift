@@ -19,6 +19,8 @@ class AVFoundationCameraViewController: UIViewController {
     @IBOutlet weak var capturePreviewImageView: UIImageView!
     
     var stillImageOutput = AVCaptureStillImageOutput()
+    var returnTap : UIGestureRecognizer?
+    var delegate : ImageSelectDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,7 @@ class AVFoundationCameraViewController: UIViewController {
         previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         previewLayer.bounds = bounds
         previewLayer.position = CGPointMake(CGRectGetMidX(bounds), CGRectGetMidY(bounds));
+
         self.previewView.layer.addSublayer(previewLayer)
         
         var device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
@@ -43,16 +46,9 @@ class AVFoundationCameraViewController: UIViewController {
         self.stillImageOutput.outputSettings = outputSettings
         captureSession.addOutput(self.stillImageOutput)
         captureSession.startRunning()
-        // Do any additional setup after loading the view.
-    }
-    
-    override func viewDidAppear(animated: Bool) {
         
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.returnTap = UITapGestureRecognizer(target: self, action: "returnToHome:")
+        capturePreviewImageView.addGestureRecognizer(returnTap!)
     }
     
     
@@ -74,10 +70,16 @@ class AVFoundationCameraViewController: UIViewController {
                     }
                 }
             }
+            
             if videoConnection != nil {
                 break;
             }
         }
+        
+        if (videoConnection?.supportsVideoOrientation != nil) {
+            videoConnection?.videoOrientation = self.interfaceOrientationToVideoOrientation(UIApplication.sharedApplication().statusBarOrientation)!
+        }
+        
         self.stillImageOutput.captureStillImageAsynchronouslyFromConnection(videoConnection, completionHandler: {(buffer : CMSampleBuffer!, error : NSError!) -> Void in
             var data = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(buffer)
             var image = UIImage(data: data)
@@ -85,7 +87,27 @@ class AVFoundationCameraViewController: UIViewController {
             println(image.size)
         })
         
-        
+    }
+    
+    func returnToHome(tap: UIGestureRecognizer) {
+        self.delegate?.didTapOnPicture(self.capturePreviewImageView.image!)
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func interfaceOrientationToVideoOrientation(orientation: UIInterfaceOrientation) -> AVCaptureVideoOrientation? {
+        switch orientation {
+        case UIInterfaceOrientation.Portrait:
+            return AVCaptureVideoOrientation.Portrait
+        case UIInterfaceOrientation.PortraitUpsideDown:
+            return AVCaptureVideoOrientation.PortraitUpsideDown
+        case UIInterfaceOrientation.LandscapeLeft:
+            return AVCaptureVideoOrientation.LandscapeLeft
+        case UIInterfaceOrientation.LandscapeRight:
+            return AVCaptureVideoOrientation.LandscapeRight
+        default:
+            println("Warning - Didn't recognise interface orientation")
+            return AVCaptureVideoOrientation.Portrait;
+        }
     }
     
 }

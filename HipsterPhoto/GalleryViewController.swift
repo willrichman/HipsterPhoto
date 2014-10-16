@@ -8,15 +8,11 @@
 
 import UIKit
 
-protocol GalleryDelegate {
-    func didTapOnPicture(image : UIImage)
-}
-
 class GalleryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var delegate : GalleryDelegate?
+    var delegate : ImageSelectDelegate?
     let imageDownloadQueue = NSOperationQueue()
     
     var images = Dictionary<Int, UIImage>()

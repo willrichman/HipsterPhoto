@@ -12,7 +12,7 @@ import CoreImage
 import OpenGLES
 import CoreData
 
-class SinglePhotoViewController: UIViewController, GalleryDelegate, PhotoFrameworkDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate{
+class SinglePhotoViewController: UIViewController, ImageSelectDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate{
     
     
     @IBOutlet weak var imageViewTrailingConstraint: NSLayoutConstraint!
@@ -127,8 +127,9 @@ class SinglePhotoViewController: UIViewController, GalleryDelegate, PhotoFramewo
             let imageSize = self.imageView.frame.size
             destinationVC.assetLargeImageSize = CGSizeMake(imageSize.width * scale, imageSize.height * scale)
         }
-        else {
-        
+        if segue.identifier == "SHOW_CAMERA" {
+            let destinationVC = segue.destinationViewController as AVFoundationCameraViewController
+            destinationVC.delegate = self
         }
     }
     
