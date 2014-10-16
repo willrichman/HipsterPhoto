@@ -127,6 +127,9 @@ class SinglePhotoViewController: UIViewController, GalleryDelegate, PhotoFramewo
             let imageSize = self.imageView.frame.size
             destinationVC.assetLargeImageSize = CGSizeMake(imageSize.width * scale, imageSize.height * scale)
         }
+        else {
+        
+        }
     }
     
     func didTapOnPicture(image : UIImage) {

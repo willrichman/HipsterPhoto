@@ -18,6 +18,8 @@
 		1559E3B119ED87E8006F7304 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1559E3B019ED87E8006F7304 /* LaunchScreen.xib */; };
 		155F368219F02CD300718D44 /* PhotosHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155F368119F02CD300718D44 /* PhotosHeaderView.swift */; };
 		155F36B519F0585600718D44 /* AVFoundationCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155F36B419F0585600718D44 /* AVFoundationCameraViewController.swift */; };
+		155F36B919F05F3100718D44 /* pickphotos.png in Resources */ = {isa = PBXBuildFile; fileRef = 155F36B819F05F3100718D44 /* pickphotos.png */; };
+		155F36BB19F0659100718D44 /* closeicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 155F36BA19F0659100718D44 /* closeicon.png */; };
 		1560CC0F19EEF1D700AB147A /* PhotoFrameworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1560CC0E19EEF1D700AB147A /* PhotoFrameworkViewController.swift */; };
 		1560CC1119EEF26F00AB147A /* PhotoFrameworkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1560CC1019EEF26F00AB147A /* PhotoFrameworkCell.swift */; };
 		15B750F419ED8833007B297D /* HipsterPhoto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15B750F319ED8833007B297D /* HipsterPhoto.jpg */; };
@@ -57,6 +59,8 @@
 		1559E3B019ED87E8006F7304 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		155F368119F02CD300718D44 /* PhotosHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosHeaderView.swift; sourceTree = "<group>"; };
 		155F36B419F0585600718D44 /* AVFoundationCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVFoundationCameraViewController.swift; sourceTree = "<group>"; };
+		155F36B819F05F3100718D44 /* pickphotos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pickphotos.png; sourceTree = "<group>"; };
+		155F36BA19F0659100718D44 /* closeicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closeicon.png; sourceTree = "<group>"; };
 		1560CC0E19EEF1D700AB147A /* PhotoFrameworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoFrameworkViewController.swift; sourceTree = "<group>"; };
 		1560CC1019EEF26F00AB147A /* PhotoFrameworkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoFrameworkCell.swift; sourceTree = "<group>"; };
 		15B750F319ED8833007B297D /* HipsterPhoto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HipsterPhoto.jpg; sourceTree = "<group>"; };
@@ -123,6 +127,8 @@
 		1559E37A19ED868F006F7304 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				155F36BA19F0659100718D44 /* closeicon.png */,
+				155F36B819F05F3100718D44 /* pickphotos.png */,
 				15B750FC19ED88C8007B297D /* camera-alt.png */,
 				15B750FA19ED88B2007B297D /* holga.png */,
 				15B750F819ED88A2007B297D /* putabirdonit.jpg */,
@@ -269,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15B750FD19ED88C8007B297D /* camera-alt.png in Resources */,
+				155F36BB19F0659100718D44 /* closeicon.png in Resources */,
 				15EA991F19EDCA390005EFBA /* Images.xcassets in Resources */,
 				15B750F419ED8833007B297D /* HipsterPhoto.jpg in Resources */,
 				15B750FE19ED8941007B297D /* Duke.otf in Resources */,
@@ -276,6 +283,7 @@
 				1559E3B119ED87E8006F7304 /* LaunchScreen.xib in Resources */,
 				15B750F919ED88A2007B297D /* putabirdonit.jpg in Resources */,
 				15B750FB19ED88B2007B297D /* holga.png in Resources */,
+				155F36B919F05F3100718D44 /* pickphotos.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
