@@ -11,9 +11,10 @@ import UIKit
 import CoreImage
 import OpenGLES
 import CoreData
+import Social
+import Accounts
 
 class SinglePhotoViewController: UIViewController, ImageSelectDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate{
-    
     
     @IBOutlet weak var imageViewTrailingConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageViewLeadingConstraint: NSLayoutConstraint!
@@ -35,6 +36,8 @@ class SinglePhotoViewController: UIViewController, ImageSelectDelegate, UIImageP
     var originalImage : UIImage?
     var filteredImage : UIImage?
     let scale = UIScreen.mainScreen().scale
+    // Properties for Social
+    var twitterAccount : ACAccount?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,6 +95,7 @@ class SinglePhotoViewController: UIViewController, ImageSelectDelegate, UIImageP
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        var imageFilter = CIFilter(name: filters[indexPath.row].name)
         let filterSelected = self.filterThumbnails[indexPath.row]
         println("Fired filter")
         filterSelected.applyFilter(self.originalImage!, completionHandler: { (filteredImage) -> Void in
@@ -254,5 +258,41 @@ class SinglePhotoViewController: UIViewController, ImageSelectDelegate, UIImageP
         self.imageView.removeGestureRecognizer(self.exitPress!)
         self.imageView.addGestureRecognizer(self.enterPress!)
     }
-
+    
+    //MARK: - Social Methods
+    func tweet(message: String?, image: UIImage?, url: NSURL?) {
+        let accountStore = ACAccountStore()
+        let accountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
+        accountStore.requestAccessToAccountsWithType(accountType, options: nil) { (granted: Bool, error: NSError!) -> Void in
+            if granted {
+                let accounts = accountStore.accountsWithAccountType(accountType)
+                self.twitterAccount = accounts.first as? ACAccount
+                
+                if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
+                    let controller = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+                    controller.setInitialText(message)
+                    controller.addImage(image)
+                    controller.addURL(url)
+                    controller.completionHandler = { (result: SLComposeViewControllerResult) -> Void in
+                        switch result {
+                        case SLComposeViewControllerResult.Cancelled:
+                            println("tweet: cancelled")
+                        case SLComposeViewControllerResult.Done:
+                            println("tweet: success")
+                        }
+                    }
+                    self.presentViewController(controller, animated: true, completion: { () -> Void in
+                        // Controller is presented
+                    })
+                }
+            } else {
+                println("Twitter is not available")
+            }
+        }
+    }
+    
+    
+    @IBAction func tweetPhoto(sender: AnyObject) {
+        tweet(nil, image: self.imageView.image, url: nil)
+    }
 }

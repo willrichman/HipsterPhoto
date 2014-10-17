@@ -23,6 +23,7 @@
 		155F36BD19F07AFB00718D44 /* ImageSelectDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155F36BC19F07AFB00718D44 /* ImageSelectDelegate.swift */; };
 		1560CC0F19EEF1D700AB147A /* PhotoFrameworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1560CC0E19EEF1D700AB147A /* PhotoFrameworkViewController.swift */; };
 		1560CC1119EEF26F00AB147A /* PhotoFrameworkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1560CC1019EEF26F00AB147A /* PhotoFrameworkCell.swift */; };
+		159746D319F1C63E00752EBE /* hipster_twitter_95x95.png in Resources */ = {isa = PBXBuildFile; fileRef = 159746D219F1C63E00752EBE /* hipster_twitter_95x95.png */; };
 		15B750F419ED8833007B297D /* HipsterPhoto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15B750F319ED8833007B297D /* HipsterPhoto.jpg */; };
 		15B750F919ED88A2007B297D /* putabirdonit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15B750F819ED88A2007B297D /* putabirdonit.jpg */; };
 		15B750FB19ED88B2007B297D /* holga.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B750FA19ED88B2007B297D /* holga.png */; };
@@ -65,6 +66,7 @@
 		155F36BC19F07AFB00718D44 /* ImageSelectDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSelectDelegate.swift; sourceTree = "<group>"; };
 		1560CC0E19EEF1D700AB147A /* PhotoFrameworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoFrameworkViewController.swift; sourceTree = "<group>"; };
 		1560CC1019EEF26F00AB147A /* PhotoFrameworkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoFrameworkCell.swift; sourceTree = "<group>"; };
+		159746D219F1C63E00752EBE /* hipster_twitter_95x95.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hipster_twitter_95x95.png; sourceTree = "<group>"; };
 		15B750F319ED8833007B297D /* HipsterPhoto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HipsterPhoto.jpg; sourceTree = "<group>"; };
 		15B750F519ED884C007B297D /* Duke.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Duke.otf; sourceTree = "<group>"; };
 		15B750F619ED886E007B297D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		1559E37A19ED868F006F7304 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				159746D219F1C63E00752EBE /* hipster_twitter_95x95.png */,
 				155F36BA19F0659100718D44 /* closeicon.png */,
 				155F36B819F05F3100718D44 /* pickphotos.png */,
 				15B750FC19ED88C8007B297D /* camera-alt.png */,
@@ -278,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15B750FD19ED88C8007B297D /* camera-alt.png in Resources */,
+				159746D319F1C63E00752EBE /* hipster_twitter_95x95.png in Resources */,
 				155F36BB19F0659100718D44 /* closeicon.png in Resources */,
 				15EA991F19EDCA390005EFBA /* Images.xcassets in Resources */,
 				15B750F419ED8833007B297D /* HipsterPhoto.jpg in Resources */,

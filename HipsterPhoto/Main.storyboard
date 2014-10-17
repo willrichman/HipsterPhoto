@@ -63,7 +63,7 @@
                                     <action selector="capturePressed:" destination="ttx-xI-lJb" eventType="touchUpInside" id="eDw-QW-TAx"/>
                                 </connections>
                             </button>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JLf-hr-aR9">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JLf-hr-aR9">
                                 <rect key="frame" x="16" y="492" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Nf1-Ge-CSc"/>
@@ -187,23 +187,19 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rya-5y-NZj">
-                                <rect key="frame" x="149" y="506" width="300" height="100"/>
+                                <rect key="frame" x="139" y="500" width="320" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67U-Fd-TzB">
-                                        <rect key="frame" x="33" y="17" width="95" height="57"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="57" id="9jc-P7-cod"/>
-                                            <constraint firstAttribute="width" constant="95" id="zDs-c7-ngQ"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="camera-alt.png">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWk-ts-crb">
+                                        <rect key="frame" x="217" y="2" width="95" height="95"/>
+                                        <state key="normal" image="hipster_twitter_95x95.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="ttx-xI-lJb" kind="presentation" identifier="SHOW_CAMERA" id="hy4-53-WaP"/>
+                                            <action selector="tweetPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Soy-Vh-Ast"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2u-HU-P6T">
-                                        <rect key="frame" x="172" y="-2" width="95" height="95"/>
+                                        <rect key="frame" x="113" y="2" width="95" height="95"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="95" id="EUj-xT-VoA"/>
                                             <constraint firstAttribute="width" constant="95" id="mLl-0Z-PWy"/>
@@ -215,15 +211,30 @@
                                             <action selector="photosPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dh1-b9-3FC"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67U-Fd-TzB">
+                                        <rect key="frame" x="8" y="21" width="95" height="57"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="57" id="9jc-P7-cod"/>
+                                            <constraint firstAttribute="width" constant="95" id="zDs-c7-ngQ"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="camera-alt.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="ttx-xI-lJb" kind="presentation" identifier="SHOW_CAMERA" id="hy4-53-WaP"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="KWk-ts-crb" secondAttribute="trailing" constant="8" id="6xg-Ae-QHn"/>
+                                    <constraint firstItem="67U-Fd-TzB" firstAttribute="leading" secondItem="rya-5y-NZj" secondAttribute="leading" constant="8" id="77H-n6-TYp"/>
+                                    <constraint firstAttribute="centerY" secondItem="KWk-ts-crb" secondAttribute="centerY" constant="0.5" id="9jE-77-C3O"/>
                                     <constraint firstAttribute="height" constant="100" id="LSe-8E-nU9"/>
-                                    <constraint firstAttribute="centerX" secondItem="67U-Fd-TzB" secondAttribute="centerX" constant="69.5" id="Q1F-aJ-6Xd"/>
-                                    <constraint firstAttribute="centerX" secondItem="T2u-HU-P6T" secondAttribute="centerX" constant="-70" id="Qg5-BH-GTV"/>
-                                    <constraint firstAttribute="width" constant="300" id="VCx-J5-OXX"/>
-                                    <constraint firstAttribute="centerY" secondItem="67U-Fd-TzB" secondAttribute="centerY" constant="4.5" id="cWu-Mp-F4I"/>
-                                    <constraint firstAttribute="centerY" secondItem="T2u-HU-P6T" secondAttribute="centerY" constant="4.5" id="h4v-pg-cny"/>
+                                    <constraint firstAttribute="width" constant="320" id="VCx-J5-OXX"/>
+                                    <constraint firstAttribute="centerX" secondItem="T2u-HU-P6T" secondAttribute="centerX" constant="-0.5" id="W8I-pw-tWQ"/>
+                                    <constraint firstAttribute="centerY" secondItem="67U-Fd-TzB" secondAttribute="centerY" id="cWu-Mp-F4I"/>
+                                    <constraint firstAttribute="centerY" secondItem="T2u-HU-P6T" secondAttribute="centerY" constant="0.5" id="mnD-oa-US7"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -242,7 +253,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Uiq-9n-BJM" secondAttribute="trailing" constant="-16" id="lCK-rZ-VY8"/>
                             <constraint firstItem="Esi-gl-RKJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="mAT-zL-ArP"/>
                             <constraint firstItem="92W-vN-8Mh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="vQf-wQ-fA7"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rya-5y-NZj" secondAttribute="bottom" constant="-6" id="vlg-14-DVv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rya-5y-NZj" secondAttribute="bottom" id="vlg-14-DVv"/>
                             <constraint firstItem="92W-vN-8Mh" firstAttribute="centerY" secondItem="Esi-gl-RKJ" secondAttribute="centerY" constant="4" id="wRJ-tB-DCG"/>
                             <constraint firstItem="Uiq-9n-BJM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="waP-ey-hHe"/>
                             <constraint firstAttribute="centerX" secondItem="rya-5y-NZj" secondAttribute="centerX" constant="1" id="yhS-5X-7v7"/>
@@ -316,7 +327,7 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PHOTOS_HEADER" id="sW3-jT-UW9" customClass="PhotosHeaderView" customModule="HipsterPhoto" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78q-4w-iGT">
@@ -503,6 +514,7 @@
         <image name="HipsterPhoto.jpg" width="1441" height="956"/>
         <image name="camera-alt.png" width="373" height="256"/>
         <image name="closeicon.png" width="256" height="256"/>
+        <image name="hipster_twitter_95x95.png" width="95" height="95"/>
         <image name="pickphotos.png" width="95" height="95"/>
         <image name="putabirdonit.jpg" width="568" height="715"/>
     </resources>
