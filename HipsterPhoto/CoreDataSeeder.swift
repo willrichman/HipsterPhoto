@@ -56,6 +56,9 @@ class CoreDataSeeder {
         var transfer = NSEntityDescription.insertNewObjectForEntityForName("Filter", inManagedObjectContext: self.managedObjectContext) as Filter
         transfer.name = "CIPhotoEffectTransfer"
         
+        var monochrome = NSEntityDescription.insertNewObjectForEntityForName("Filter", inManagedObjectContext: self.managedObjectContext) as Filter
+        monochrome.name = "CIColorMonochrome"
+        
         var error: NSError?
         self.managedObjectContext?.save(&error)
         

@@ -186,11 +186,28 @@
                                     <constraint firstAttribute="width" secondItem="dAd-ho-wu5" secondAttribute="height" multiplier="1:1" id="BMT-tg-9cg"/>
                                 </constraints>
                             </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwV-gy-7DS">
+                                <rect key="frame" x="270" y="437" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="1Rp-JI-q3b"/>
+                                    <constraint firstAttribute="height" constant="60" id="saO-jg-759"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="save.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TyU-MT-D1K"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rya-5y-NZj">
-                                <rect key="frame" x="139" y="500" width="320" height="100"/>
+                                <rect key="frame" x="140" y="505" width="320" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWk-ts-crb">
-                                        <rect key="frame" x="217" y="2" width="95" height="95"/>
+                                        <rect key="frame" x="237" y="2" width="75" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="EB7-E5-Af5"/>
+                                            <constraint firstAttribute="width" constant="75" id="FD3-6p-zaH"/>
+                                        </constraints>
                                         <state key="normal" image="hipster_twitter_95x95.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -199,10 +216,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2u-HU-P6T">
-                                        <rect key="frame" x="113" y="2" width="95" height="95"/>
+                                        <rect key="frame" x="123" y="2" width="75" height="75"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="95" id="EUj-xT-VoA"/>
-                                            <constraint firstAttribute="width" constant="95" id="mLl-0Z-PWy"/>
+                                            <constraint firstAttribute="height" constant="75" id="EUj-xT-VoA"/>
+                                            <constraint firstAttribute="width" constant="75" id="mLl-0Z-PWy"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="pickphotos.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -211,11 +228,11 @@
                                             <action selector="photosPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dh1-b9-3FC"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67U-Fd-TzB">
-                                        <rect key="frame" x="8" y="21" width="95" height="57"/>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67U-Fd-TzB">
+                                        <rect key="frame" x="8" y="17" width="75" height="45"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="57" id="9jc-P7-cod"/>
-                                            <constraint firstAttribute="width" constant="95" id="zDs-c7-ngQ"/>
+                                            <constraint firstAttribute="height" constant="45" id="9jc-P7-cod"/>
+                                            <constraint firstAttribute="width" constant="75" id="zDs-c7-ngQ"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="camera-alt.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -229,8 +246,8 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="KWk-ts-crb" secondAttribute="trailing" constant="8" id="6xg-Ae-QHn"/>
                                     <constraint firstItem="67U-Fd-TzB" firstAttribute="leading" secondItem="rya-5y-NZj" secondAttribute="leading" constant="8" id="77H-n6-TYp"/>
-                                    <constraint firstAttribute="centerY" secondItem="KWk-ts-crb" secondAttribute="centerY" constant="0.5" id="9jE-77-C3O"/>
-                                    <constraint firstAttribute="height" constant="100" id="LSe-8E-nU9"/>
+                                    <constraint firstAttribute="centerY" secondItem="KWk-ts-crb" secondAttribute="centerY" id="9jE-77-C3O"/>
+                                    <constraint firstAttribute="height" constant="80" id="LSe-8E-nU9"/>
                                     <constraint firstAttribute="width" constant="320" id="VCx-J5-OXX"/>
                                     <constraint firstAttribute="centerX" secondItem="T2u-HU-P6T" secondAttribute="centerX" constant="-0.5" id="W8I-pw-tWQ"/>
                                     <constraint firstAttribute="centerY" secondItem="67U-Fd-TzB" secondAttribute="centerY" id="cWu-Mp-F4I"/>
@@ -241,6 +258,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dAd-ho-wu5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="5qa-0v-OGb"/>
+                            <constraint firstAttribute="centerX" secondItem="lwV-gy-7DS" secondAttribute="centerX" id="87N-Fd-BJ5"/>
                             <constraint firstAttribute="centerX" secondItem="dAd-ho-wu5" secondAttribute="centerX" id="9Ha-bL-ihh"/>
                             <constraint firstItem="92W-vN-8Mh" firstAttribute="centerX" secondItem="Esi-gl-RKJ" secondAttribute="centerX" constant="-0.25" id="Hfg-m0-K63"/>
                             <constraint firstItem="dAd-ho-wu5" firstAttribute="top" secondItem="Esi-gl-RKJ" secondAttribute="bottom" constant="35" id="Oov-jF-3qw"/>
@@ -252,11 +270,12 @@
                             <constraint firstItem="Esi-gl-RKJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="h8l-QJ-NcW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Uiq-9n-BJM" secondAttribute="trailing" constant="-16" id="lCK-rZ-VY8"/>
                             <constraint firstItem="Esi-gl-RKJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="mAT-zL-ArP"/>
+                            <constraint firstItem="rya-5y-NZj" firstAttribute="top" secondItem="lwV-gy-7DS" secondAttribute="bottom" constant="8" id="uK4-LN-7YL"/>
                             <constraint firstItem="92W-vN-8Mh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="vQf-wQ-fA7"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rya-5y-NZj" secondAttribute="bottom" id="vlg-14-DVv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rya-5y-NZj" secondAttribute="bottom" constant="15" id="vlg-14-DVv"/>
                             <constraint firstItem="92W-vN-8Mh" firstAttribute="centerY" secondItem="Esi-gl-RKJ" secondAttribute="centerY" constant="4" id="wRJ-tB-DCG"/>
                             <constraint firstItem="Uiq-9n-BJM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="waP-ey-hHe"/>
-                            <constraint firstAttribute="centerX" secondItem="rya-5y-NZj" secondAttribute="centerX" constant="1" id="yhS-5X-7v7"/>
+                            <constraint firstAttribute="centerX" secondItem="rya-5y-NZj" secondAttribute="centerX" id="yhS-5X-7v7"/>
                         </constraints>
                         <variation key="widthClass=compact">
                             <mask key="constraints">
@@ -273,6 +292,7 @@
                         <outlet property="imageViewBottomConstraint" destination="dOS-Bm-c3u" id="vzQ-ob-5Di"/>
                         <outlet property="imageViewLeadingConstraint" destination="5qa-0v-OGb" id="5EB-gI-qIJ"/>
                         <outlet property="imageViewTrailingConstraint" destination="fKp-kj-ErJ" id="r8D-Uq-FFz"/>
+                        <outlet property="saveButton" destination="lwV-gy-7DS" id="Ue6-QN-jcw"/>
                         <segue destination="gua-zJ-DLb" kind="presentation" identifier="SHOW_GALLERY" id="f4r-c5-BK5"/>
                         <segue destination="m1A-K5-ahl" kind="presentation" identifier="SHOW_PHOTOS_FRAMEWORK" id="0LE-Hu-3nM"/>
                     </connections>
@@ -517,5 +537,6 @@
         <image name="hipster_twitter_95x95.png" width="95" height="95"/>
         <image name="pickphotos.png" width="95" height="95"/>
         <image name="putabirdonit.jpg" width="568" height="715"/>
+        <image name="save.png" width="128" height="128"/>
     </resources>
 </document>

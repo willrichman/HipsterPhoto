@@ -84,51 +84,13 @@ class AVFoundationCameraViewController: UIViewController {
             var data = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(buffer)
             var image = UIImage(data: data)
             
-            // Crop the image to a square (yikes, fancy!)
-            var size = CGSize(width: 960, height: 960)
-            var croppedImage = self.squareImageWithImage(image, scaledToSize: size)
-            
-            self.capturePreviewImageView.image = croppedImage
-            print(croppedImage.size)
+            self.capturePreviewImageView.image = image
         })
     }
     
     func returnToHome(tap: UIGestureRecognizer) {
         self.delegate?.didTapOnPicture(self.capturePreviewImageView.image!)
         self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    
-    func squareImageWithImage(image: UIImage, scaledToSize: CGSize) -> UIImage {
-        var ratio: CGFloat!
-        var delta: CGFloat!
-        var offset: CGPoint!
-        
-        var size = CGSizeMake(scaledToSize.width, scaledToSize.width)
-        
-        if image.size.width > image.size.height {
-            ratio = scaledToSize.width / image.size.width
-            delta = ratio * image.size.width - ratio * image.size.height
-            offset = CGPointMake(delta / 2, 0)
-        } else {
-            ratio = scaledToSize.width / image.size.height
-            delta = ratio * image.size.height - ratio * image.size.width
-            offset = CGPointMake(0, delta / 2)
-        }
-        
-        var clipRect: CGRect = CGRectMake(-offset.x, -offset.y, (ratio * image.size.width) + delta, (ratio * image.size.height) + delta)
-        
-        if UIScreen.mainScreen().respondsToSelector("scale") {
-            UIGraphicsBeginImageContextWithOptions(size, true, 0.0)
-        } else {
-            UIGraphicsBeginImageContext(size)
-        }
-        UIRectClip(clipRect)
-        image.drawInRect(clipRect)
-        var newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return newImage
     }
     
 }

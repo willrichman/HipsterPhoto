@@ -32,6 +32,14 @@ class FilterThumbnail {
             var image = CIImage(image: self.originalThumbnail)
             var imageFilter = CIFilter(name: self.filterName)
             imageFilter.setDefaults()
+            switch self.filterName {
+            case "CIColorMonochrome":
+                imageFilter.setValue(CIColor(red: self.getRandom(), green: self.getRandom(), blue: self.getRandom()), forKey: kCIInputColorKey)
+            case "CIPixellate":
+                imageFilter.setValue(self.originalThumbnail.size.width / 30, forKey: kCIInputScaleKey)
+            default:
+                break
+            }
             imageFilter.setValue(image, forKey: kCIInputImageKey)
             
             /* Generate the results.  The value for key happens lazily, then actually filters in createCGImage */
@@ -53,8 +61,12 @@ class FilterThumbnail {
         
         self.imageQueue?.addOperationWithBlock({ () -> Void in
             /* Setting up your image with a CIImage */
+            if self.filterName == "CIPixellate" {
+                self.filter!.setValue(image.size.width / 30, forKey: kCIInputScaleKey)
+            }
             var image = CIImage(image: image)
             self.filter!.setValue(image, forKey: kCIInputImageKey)
+            
             
             /* Generate the results.  The value for key happens lazily, then actually filters in createCGImage */
             var result = self.filter!.valueForKey(kCIOutputImageKey) as? CIImage
@@ -66,8 +78,12 @@ class FilterThumbnail {
             NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                 completionHandler(filteredImage: filteredImage)
             })
-
+            
         })
+    }
+    
+    func getRandom () -> CGFloat {
+        return CGFloat(Float(arc4random()) / Float(UINT32_MAX))
     }
     
 }

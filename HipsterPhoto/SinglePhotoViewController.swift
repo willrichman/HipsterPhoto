@@ -13,9 +13,11 @@ import OpenGLES
 import CoreData
 import Social
 import Accounts
+import Photos
 
 class SinglePhotoViewController: UIViewController, ImageSelectDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate{
     
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var imageViewTrailingConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageViewLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageViewBottomConstraint: NSLayoutConstraint!
@@ -95,7 +97,6 @@ class SinglePhotoViewController: UIViewController, ImageSelectDelegate, UIImageP
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        var imageFilter = CIFilter(name: filters[indexPath.row].name)
         let filterSelected = self.filterThumbnails[indexPath.row]
         println("Fired filter")
         filterSelected.applyFilter(self.originalImage!, completionHandler: { (filteredImage) -> Void in
@@ -104,6 +105,7 @@ class SinglePhotoViewController: UIViewController, ImageSelectDelegate, UIImageP
             self.imageViewLeadingConstraint.constant = self.imageViewLeadingConstraint.constant / 3
             self.imageViewBottomConstraint.constant = self.imageViewBottomConstraint.constant / 3
             self.filterCollectionViewBottomConstraint.constant = -100
+            self.saveButton.hidden = false
             
             UIView.animateWithDuration(0.4, animations: { () -> Void in
                 self.view.layoutIfNeeded()
@@ -116,6 +118,27 @@ class SinglePhotoViewController: UIViewController, ImageSelectDelegate, UIImageP
     }
     
     // MARK: - Navigation/Menus
+    
+    @IBAction func saveButtonPressed(sender: AnyObject) {
+        let alertController = UIAlertController(title: "Save", message: "Save this image to your photos?", preferredStyle: UIAlertControllerStyle.Alert)
+        let saveAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default) { (action) -> Void in
+            PHPhotoLibrary.sharedPhotoLibrary().performChanges({
+                let changeRequest = PHAssetChangeRequest.creationRequestForAssetFromImage(self.imageView.image)
+                }, completionHandler: nil)
+            self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                
+            })
+            self.saveButton.hidden = true
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (action) -> Void in
+        }
+        
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        self.presentViewController(alertController, animated: true) { () -> Void in
+            
+        }
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SHOW_GALLERY" {
@@ -138,8 +161,10 @@ class SinglePhotoViewController: UIViewController, ImageSelectDelegate, UIImageP
     }
     
     func didTapOnPicture(image : UIImage) {
-        self.imageView.image = image
-        self.originalImage = image
+        let size = CGSize(width: 960, height: 960)
+        var imageReceived = self.squareImageWithImage(image, scaledToSize: size)
+        self.imageView.image = imageReceived
+        self.originalImage = imageReceived
         self.generateThumbnail()
         self.resetFilterThumbnails()
     }
@@ -295,4 +320,37 @@ class SinglePhotoViewController: UIViewController, ImageSelectDelegate, UIImageP
     @IBAction func tweetPhoto(sender: AnyObject) {
         tweet(nil, image: self.imageView.image, url: nil)
     }
+    
+    func squareImageWithImage(image: UIImage, scaledToSize: CGSize) -> UIImage {
+        var ratio: CGFloat!
+        var delta: CGFloat!
+        var offset: CGPoint!
+        
+        var size = CGSizeMake(scaledToSize.width, scaledToSize.width)
+        
+        if image.size.width > image.size.height {
+            ratio = scaledToSize.width / image.size.width
+            delta = ratio * image.size.width - ratio * image.size.height
+            offset = CGPointMake(delta / 2, 0)
+        } else {
+            ratio = scaledToSize.width / image.size.height
+            delta = ratio * image.size.height - ratio * image.size.width
+            offset = CGPointMake(0, delta / 2)
+        }
+        
+        var clipRect: CGRect = CGRectMake(-offset.x, -offset.y, (ratio * image.size.width) + delta, (ratio * image.size.height) + delta)
+        
+        if UIScreen.mainScreen().respondsToSelector("scale") {
+            UIGraphicsBeginImageContextWithOptions(size, true, 0.0)
+        } else {
+            UIGraphicsBeginImageContext(size)
+        }
+        UIRectClip(clipRect)
+        image.drawInRect(clipRect)
+        var newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+
 }
