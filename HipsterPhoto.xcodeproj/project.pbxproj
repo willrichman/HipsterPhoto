@@ -25,6 +25,7 @@
 		1560CC1119EEF26F00AB147A /* PhotoFrameworkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1560CC1019EEF26F00AB147A /* PhotoFrameworkCell.swift */; };
 		159746D319F1C63E00752EBE /* hipster_twitter_95x95.png in Resources */ = {isa = PBXBuildFile; fileRef = 159746D219F1C63E00752EBE /* hipster_twitter_95x95.png */; };
 		159746D519F2F13100752EBE /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 159746D419F2F13100752EBE /* save.png */; };
+		159746D719F2FC1100752EBE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 159746D619F2FC1100752EBE /* README.md */; };
 		15B750F419ED8833007B297D /* HipsterPhoto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15B750F319ED8833007B297D /* HipsterPhoto.jpg */; };
 		15B750F919ED88A2007B297D /* putabirdonit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15B750F819ED88A2007B297D /* putabirdonit.jpg */; };
 		15B750FB19ED88B2007B297D /* holga.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B750FA19ED88B2007B297D /* holga.png */; };
@@ -69,6 +70,7 @@
 		1560CC1019EEF26F00AB147A /* PhotoFrameworkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoFrameworkCell.swift; sourceTree = "<group>"; };
 		159746D219F1C63E00752EBE /* hipster_twitter_95x95.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hipster_twitter_95x95.png; sourceTree = "<group>"; };
 		159746D419F2F13100752EBE /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
+		159746D619F2FC1100752EBE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		15B750F319ED8833007B297D /* HipsterPhoto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HipsterPhoto.jpg; sourceTree = "<group>"; };
 		15B750F519ED884C007B297D /* Duke.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Duke.otf; sourceTree = "<group>"; };
 		15B750F619ED886E007B297D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		1559E36E19ED868F006F7304 = {
 			isa = PBXGroup;
 			children = (
+				159746D619F2FC1100752EBE /* README.md */,
 				1559E37919ED868F006F7304 /* HipsterPhoto */,
 				1559E39219ED868F006F7304 /* HipsterPhotoTests */,
 				1559E37819ED868F006F7304 /* Products */,
@@ -318,6 +321,7 @@
 				1559E38019ED868F006F7304 /* HipsterPhoto.xcdatamodeld in Sources */,
 				1559E3AB19ED876A006F7304 /* GalleryViewController.swift in Sources */,
 				1559E3A919ED8761006F7304 /* GalleryHeaderView.swift in Sources */,
+				159746D719F2FC1100752EBE /* README.md in Sources */,
 				1559E37D19ED868F006F7304 /* AppDelegate.swift in Sources */,
 				15B7510419EDA04A007B297D /* CoreDataSeeder.swift in Sources */,
 				15B7510819EDA131007B297D /* Filter.swift in Sources */,
