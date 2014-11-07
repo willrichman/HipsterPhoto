@@ -49,7 +49,7 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
                     cell.galleryCellLabel.text = self.titles[Int(arc4random()) % self.titles.count]
 
                 }
-                                collectionView.reloadItemsAtIndexPaths([indexPath])
+                collectionView.reloadItemsAtIndexPaths([indexPath])
             })
         }
 
@@ -86,8 +86,8 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
         
         self.imageDownloadQueue.addOperationWithBlock { () -> Void in
             let imageURL = NSURL(string: "http://lorempixel.com/300/300/")
-            let imageData = NSData(contentsOfURL: imageURL)
-            let imageToReturn = UIImage(data: imageData)
+            let imageData = NSData(contentsOfURL: imageURL!)
+            let imageToReturn = UIImage(data: imageData!)
             NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
                 completionHandler(errorDescription: nil, returnedImage: imageToReturn)
             }

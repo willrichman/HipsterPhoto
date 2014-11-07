@@ -22,6 +22,7 @@ class PhotoFrameworkViewController: UIViewController, UICollectionViewDataSource
     var header : PhotosHeaderView?
     var flowLayout: UICollectionViewFlowLayout!
     var frameworkQueue = NSOperationQueue()
+    var origin: CGRect?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,13 +56,13 @@ class PhotoFrameworkViewController: UIViewController, UICollectionViewDataSource
         var currentTag = cell.tag + 1
         cell.tag = currentTag
         var asset = self.assetFetchResults[indexPath.row] as PHAsset
-            self.imageManager.requestImageForAsset(asset, targetSize: self.assetCellSize, contentMode: PHImageContentMode.AspectFill, options: nil) { (image, info) -> Void in
-                if cell.tag == currentTag {
-                    cell.imageView.image = image
-                }
+        self.imageManager.requestImageForAsset(asset, targetSize: self.assetCellSize, contentMode: PHImageContentMode.AspectFill, options: nil) { (image, info) -> Void in
+            if cell.tag == currentTag {
+                cell.imageView.image = image
             }
+        }
         
-        
+    
         return cell
     }
     
@@ -73,15 +74,18 @@ class PhotoFrameworkViewController: UIViewController, UICollectionViewDataSource
     }
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let attributes = collectionView.layoutAttributesForItemAtIndexPath(indexPath)
+        let origin = self.view.convertRect(attributes!.frame, fromView: collectionView)
+        println("origin: \(origin)")
         println("indexpath: \(indexPath.row)")
         var asset = self.assetFetchResults[indexPath.row] as PHAsset
         self.imageManager.requestImageForAsset(asset, targetSize: self.assetLargeImageSize, contentMode: PHImageContentMode.AspectFill, options: nil) { (image: UIImage!, info) -> Void in
             self.delegate?.didTapOnPicture(image)
             return(  )
         }
-        
-        self.dismissViewControllerAnimated(true, completion: { () -> Void in
-        })
+//        
+//        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+//        })
     }
     
     //MARK: - GestureRecognizer Handler

@@ -16,6 +16,7 @@
 		1559E3AD19ED8772006F7304 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1559E3AC19ED8772006F7304 /* GalleryCell.swift */; };
 		1559E3AF19ED87D8006F7304 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1559E3AE19ED87D8006F7304 /* Main.storyboard */; };
 		1559E3B119ED87E8006F7304 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1559E3B019ED87E8006F7304 /* LaunchScreen.xib */; };
+		155C698A19F8256900591841 /* ShowImageAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155C698919F8256900591841 /* ShowImageAnimator.swift */; };
 		155F368219F02CD300718D44 /* PhotosHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155F368119F02CD300718D44 /* PhotosHeaderView.swift */; };
 		155F36B519F0585600718D44 /* AVFoundationCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155F36B419F0585600718D44 /* AVFoundationCameraViewController.swift */; };
 		155F36B919F05F3100718D44 /* pickphotos.png in Resources */ = {isa = PBXBuildFile; fileRef = 155F36B819F05F3100718D44 /* pickphotos.png */; };
@@ -25,7 +26,6 @@
 		1560CC1119EEF26F00AB147A /* PhotoFrameworkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1560CC1019EEF26F00AB147A /* PhotoFrameworkCell.swift */; };
 		159746D319F1C63E00752EBE /* hipster_twitter_95x95.png in Resources */ = {isa = PBXBuildFile; fileRef = 159746D219F1C63E00752EBE /* hipster_twitter_95x95.png */; };
 		159746D519F2F13100752EBE /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 159746D419F2F13100752EBE /* save.png */; };
-		159746D719F2FC1100752EBE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 159746D619F2FC1100752EBE /* README.md */; };
 		15B750F419ED8833007B297D /* HipsterPhoto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15B750F319ED8833007B297D /* HipsterPhoto.jpg */; };
 		15B750F919ED88A2007B297D /* putabirdonit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15B750F819ED88A2007B297D /* putabirdonit.jpg */; };
 		15B750FB19ED88B2007B297D /* holga.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B750FA19ED88B2007B297D /* holga.png */; };
@@ -61,6 +61,7 @@
 		1559E3AC19ED8772006F7304 /* GalleryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
 		1559E3AE19ED87D8006F7304 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1559E3B019ED87E8006F7304 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		155C698919F8256900591841 /* ShowImageAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowImageAnimator.swift; sourceTree = "<group>"; };
 		155F368119F02CD300718D44 /* PhotosHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosHeaderView.swift; sourceTree = "<group>"; };
 		155F36B419F0585600718D44 /* AVFoundationCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVFoundationCameraViewController.swift; sourceTree = "<group>"; };
 		155F36B819F05F3100718D44 /* pickphotos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pickphotos.png; sourceTree = "<group>"; };
@@ -175,6 +176,7 @@
 				1559E38119ED868F006F7304 /* SinglePhotoViewController.swift */,
 				1559E3AA19ED876A006F7304 /* GalleryViewController.swift */,
 				1560CC0E19EEF1D700AB147A /* PhotoFrameworkViewController.swift */,
+				155C698919F8256900591841 /* ShowImageAnimator.swift */,
 				155F36B419F0585600718D44 /* AVFoundationCameraViewController.swift */,
 			);
 			name = "Controller Layer";
@@ -316,12 +318,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				15B7510219ED95A1007B297D /* FilterViewCell.swift in Sources */,
+				155C698A19F8256900591841 /* ShowImageAnimator.swift in Sources */,
 				1559E3AD19ED8772006F7304 /* GalleryCell.swift in Sources */,
 				1559E38219ED868F006F7304 /* SinglePhotoViewController.swift in Sources */,
 				1559E38019ED868F006F7304 /* HipsterPhoto.xcdatamodeld in Sources */,
 				1559E3AB19ED876A006F7304 /* GalleryViewController.swift in Sources */,
 				1559E3A919ED8761006F7304 /* GalleryHeaderView.swift in Sources */,
-				159746D719F2FC1100752EBE /* README.md in Sources */,
 				1559E37D19ED868F006F7304 /* AppDelegate.swift in Sources */,
 				15B7510419EDA04A007B297D /* CoreDataSeeder.swift in Sources */,
 				15B7510819EDA131007B297D /* Filter.swift in Sources */,
@@ -437,6 +439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HipsterPhoto/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -448,6 +451,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HipsterPhoto/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
